@@ -80,6 +80,7 @@ class RefreshLocalizations {
     'sv': SvRefreshString(),
     'pt': PtRefreshString(),
     'ko': KrRefreshString(),
+    'hu': HuRefreshString(),
   };
 
   RefreshString? get currentLocalization {
@@ -116,7 +117,8 @@ class RefreshLocalizationsDelegate
       'pt',
       'sv',
       'nl',
-      'es'
+      'es',
+      'hu'
     ].contains(locale.languageCode);
   }
 
@@ -238,6 +240,42 @@ class EnRefreshString implements RefreshString {
 
   @override
   String? refreshingText = "Refreshing…";
+}
+
+/// Hungarian
+class HuRefreshString implements RefreshString {
+  @override
+  String? canLoadingText = "Engedd el a betöltéshez";
+
+  @override
+  String? canRefreshText = "Engedd el a frissítéshez";
+
+  @override
+  String? canTwoLevelText = "Engedd el a következő szintre lépéshez";
+
+  @override
+  String? idleLoadingText = "Húzd fel a frissítéshez";
+
+  @override
+  String? idleRefreshText = "Húzd le a frissítéshez";
+
+  @override
+  String? loadFailedText = "Betöltési hiba";
+
+  @override
+  String? loadingText = "Betöltés...";
+
+  @override
+  String? noMoreText = "Nincs több adat";
+
+  @override
+  String? refreshCompleteText = "Frissítés kész";
+
+  @override
+  String? refreshFailedText = "Frissítési hiba";
+
+  @override
+  String? refreshingText = "Frissítés...";
 }
 
 /// French
